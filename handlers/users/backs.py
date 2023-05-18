@@ -7,10 +7,10 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 
 
-@dp.message_handler(text="◀️ Orqaga", state=Video.menu)
+@dp.message_handler(text="◀️ Orqaga", state='*')
 async def back_to_main(message: types.Message, state: FSMContext):
     user_id = message.from_user.id
-    full_name = message.from_user.id
+    full_name = message.from_user.full_name
 
     text = f"<b>Assalomu aleykum {full_name}! Botimizga xush kelibsiz😊 " \
            f"Botimizdan bemalol foydalanishingiz mumkin💁‍♂️ Botda funksiyalar juda ko'p</b>"

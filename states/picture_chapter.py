@@ -1,6 +1,5 @@
 from aiogram.dispatcher.filters.state import StatesGroup, State
 
 
-class Video(StatesGroup):
+class Picture(StatesGroup):
     menu = State()
-    search = State()
