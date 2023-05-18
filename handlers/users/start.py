@@ -2,6 +2,7 @@ from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandStart
 
 from data.config import ADMINS
+from keyboards.default.start import start, start_admin
 from loader import dp, db, bot
 
 
@@ -27,4 +28,10 @@ async def bot_start(message: types.Message):
     except:
         await bot.send_message(chat_id=ADMINS[0], text=f"{user_mention} [<code>{user_id}</code>] bazaga oldin qo'shilgan")
 
-    await message.answer(f"Xush kelibsiz! {full_name}")
+    text = f"<b>Assalomu aleykum {full_name}! Botimizga xush kelibsiz😊 " \
+           f"Botimizdan bemalol foydalanishingiz mumkin💁‍♂️ Botda funksiyalar juda ko'p</b>"
+
+    if user_id != ADMINS[0]:
+        await message.answer(text=text, reply_markup=start)
+    else:
+        await message.answer(text=text, reply_markup=start_admin)

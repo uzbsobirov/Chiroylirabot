@@ -1,3 +1,3 @@
-from . import help
-from . import start
-from . import admin
+from . import (
+    admin, help, start, chapter_videos, backs
+)
