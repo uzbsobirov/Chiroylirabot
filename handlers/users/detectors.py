@@ -1,3 +1,7 @@
+from data.config import ADMINS
+from keyboards.default.start import start_admin, start
+
+
 def search_video(item):
     if item.lower() == 'a':
         return 'https://t.me/forchrabot/3'
@@ -82,3 +86,11 @@ def search_video(item):
             return 1
         else:
             return 2
+
+
+def is_admin(user_id):
+    if user_id == ADMINS[0]:
+        return start_admin
+
+    else:
+        return start

@@ -1,3 +1,3 @@
 from . import (
-    help, applying
+    help, applying, rating
 )

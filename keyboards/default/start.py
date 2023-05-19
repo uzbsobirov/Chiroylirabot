@@ -14,19 +14,28 @@ start = ReplyKeyboardMarkup(
         [
             KeyboardButton(
                 text="📥 Video yuklash"
+            ),
+            KeyboardButton(
+                text="🌙 Islomiy bo'lim"
             )
         ],
         [
             KeyboardButton(
-                text="🌙 Islomiy bo'lim"
-            ),
+                text="ℹ️ Ismlar ma'nosi"
+            )
+            ,
             KeyboardButton(
                 text="✍️ Niklar bo'limi"
             )
         ],
         [
             KeyboardButton(
-                text="📩 Fikr bildirish"
+                text="📜 Biz haqimizda"
+            )
+        ],
+        [
+            KeyboardButton(
+                text="🖥 Admin panel"
             )
         ]
     ], resize_keyboard=True, one_time_keyboard=True
@@ -45,19 +54,23 @@ start_admin = ReplyKeyboardMarkup(
         [
             KeyboardButton(
                 text="📥 Video yuklash"
+            ),
+            KeyboardButton(
+                text="🌙 Islomiy bo'lim"
             )
         ],
         [
             KeyboardButton(
-                text="🌙 Islomiy bo'lim"
-            ),
+                text="ℹ️ Ismlar ma'nosi"
+            )
+            ,
             KeyboardButton(
                 text="✍️ Niklar bo'limi"
             )
         ],
         [
             KeyboardButton(
-                text="📩 Fikr bildirish"
+                text="📜 Biz haqimizda"
             )
         ],
         [
