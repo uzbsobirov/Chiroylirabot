@@ -32,11 +32,6 @@ start = ReplyKeyboardMarkup(
             KeyboardButton(
                 text="📜 Biz haqimizda"
             )
-        ],
-        [
-            KeyboardButton(
-                text="🖥 Admin panel"
-            )
         ]
     ], resize_keyboard=True, one_time_keyboard=True
 )

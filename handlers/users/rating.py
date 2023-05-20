@@ -20,14 +20,24 @@ async def meaning_of_name(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text="📩 Fikr bildirish", state=Rating.rate)
 async def rate_opinion(message: types.Message, state: FSMContext):
+    user_id = message.from_user.id
+
     text = "<i>Fikringizni yozib yuboring...</i>"
     await message.answer(text=text)
+
+    await state.update_data(
+        {'user_id': user_id}
+    )
 
     await Rating.opinion.set()
 
 
 @dp.message_handler(state=Rating.opinion)
 async def get_opinion(message: types.Message, state: FSMContext):
+    data = await state.get_data()
+    user_id = data.get('user_id')
+
+    # print(user_id)
     user_id = message.from_user.id
     full_name = message.from_user.full_name
     user_mention = message.from_user.get_mention(name=full_name)
@@ -39,3 +49,5 @@ async def get_opinion(message: types.Message, state: FSMContext):
     text = f"<b>{user_mention} -- fikr bildirdi👇</b>\n\n<i>{user_opinion}</i>"
 
     await bot.send_message(chat_id=ADMINS[0], text=text, reply_markup=answer)
+
+
