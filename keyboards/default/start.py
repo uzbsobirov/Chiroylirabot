@@ -6,10 +6,10 @@ start = ReplyKeyboardMarkup(
         [
             KeyboardButton(
                 text="📹 Videolar bo'limi"
-            ),
-            KeyboardButton(
-                text="🖼 Suratlar bo'limi"
             )
+            # KeyboardButton(
+            #     text="🖼 Suratlar bo'limi"
+            # )
         ],
         [
             KeyboardButton(
@@ -41,10 +41,10 @@ start_admin = ReplyKeyboardMarkup(
         [
             KeyboardButton(
                 text="📹 Videolar bo'limi"
-            ),
-            KeyboardButton(
-                text="🖼 Suratlar bo'limi"
             )
+            # KeyboardButton(
+            #     text="🖼 Suratlar bo'limi"
+            # )
         ],
         [
             KeyboardButton(

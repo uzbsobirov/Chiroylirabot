@@ -18,7 +18,7 @@ async def chapter_of_videos(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text="🎁 Bepul", state=Video.menu)
 async def free_videos(message: types.Message, state: FSMContext):
-    text = "Iltimos ismingizni bosh harfini kiriting..."
+    text = "Iltimos ismingizni bosh harfini kiriting...\n❗Faqat lotin harflaridan foydalaning"
 
     await message.answer(text=text)
 

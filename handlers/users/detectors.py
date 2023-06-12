@@ -1,5 +1,9 @@
+from aiogram import types
+
 from data.config import ADMINS
 from keyboards.default.start import start_admin, start
+from handlers.download_functions.functions import instagram
+from keyboards.inline.share import share
 
 
 def search_video(item):
@@ -94,3 +98,25 @@ def is_admin(user_id):
 
     else:
         return start
+
+
+def detect_downloader(link):
+    if link.startswith('https://www.instagram.com/') or link.startswith('www.instagram.com/') or link.startswith(
+            'instagram.com/'):
+        return instagram(link=link)
+    elif link.startswith('https://www.tiktok.com/') or link.startswith('tiktok.com/') or link.startswith(
+            'www.tiktok.com/'):
+        pass
+
+    elif link.isalnum():
+        return '<b>Faqat linklardan foydalaning❗️</b>'
+
+
+async def video_or_image(link, message, media, username):
+    caption = f"<b>📥 Downloaded via @{username}</b>"
+
+    if link['Type'] == 'Post-Image':
+        return await message.answer_photo(photo=media, caption=caption, reply_markup=share())
+
+    elif link['Type'] == 'Post-Video':
+        return await message.answer_video(video=media, caption=caption, reply_markup=share())
