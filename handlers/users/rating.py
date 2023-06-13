@@ -48,6 +48,12 @@ async def get_opinion(message: types.Message, state: FSMContext):
 
     text = f"<b>{user_mention} -- fikr bildirdi👇</b>\n\n<i>{user_opinion}</i>"
 
-    await bot.send_message(chat_id=ADMINS[0], text=text, reply_markup=answer)
+    user_request = await bot.send_message(chat_id=ADMINS[0], text=text, reply_markup=answer)
+
+    await state.update_data(
+        {'user_request': user_request}
+    )
+
+    await Rating.answer.set()
 
 

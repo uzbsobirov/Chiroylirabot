@@ -2,7 +2,7 @@ from aiogram import types
 
 from data.config import ADMINS
 from keyboards.default.start import start_admin, start
-from handlers.download_functions.functions import instagram
+from handlers.download_functions.functions import all_downloader
 from keyboards.inline.share import share
 
 
@@ -103,7 +103,7 @@ def is_admin(user_id):
 def detect_downloader(link):
     if link.startswith('https://www.instagram.com/') or link.startswith('www.instagram.com/') or link.startswith(
             'instagram.com/'):
-        return instagram(link=link)
+        return all_downloader(link=link)
     elif link.startswith('https://www.tiktok.com/') or link.startswith('tiktok.com/') or link.startswith(
             'www.tiktok.com/'):
         pass

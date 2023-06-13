@@ -12,9 +12,9 @@ start = ReplyKeyboardMarkup(
             # )
         ],
         [
-            KeyboardButton(
-                text="📥 Video yuklash"
-            ),
+            # KeyboardButton(
+            #     text="📥 Video yuklash"
+            # ),
             KeyboardButton(
                 text="🌙 Islomiy bo'lim"
             )
@@ -47,9 +47,9 @@ start_admin = ReplyKeyboardMarkup(
             # )
         ],
         [
-            KeyboardButton(
-                text="📥 Video yuklash"
-            ),
+            # KeyboardButton(
+            #     text="📥 Video yuklash"
+            # ),
             KeyboardButton(
                 text="🌙 Islomiy bo'lim"
             )
